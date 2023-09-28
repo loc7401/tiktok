@@ -1,0 +1,43 @@
+.wrapper{
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    
+    &:hover{
+        background-color: #16182308;
+        cursor: pointer;
+    }
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.infor{
+    flex: 1;
+    position: relative;
+}
+
+.name{
+    position: absolute;
+    top: -21px;
+    font-weight: 600;
+}
+
+.icon{
+    margin-left: 6px;
+    color: #20d5ec;
+}
+
+.username{
+   position: absolute;
+    top: -2px;
+    color: #16182380;
+    font-weight: 500;
+}
+
+

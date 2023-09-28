@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     width: 100%;
     height: var(--default-layout-header-height);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
@@ -6,20 +6,27 @@
     justify-content: center;
 }
 
-.inner{
+.inner {
     height: 100%;
-    width: var(--default-layout-weight);
+    width: 100%;
+    padding: 0 24px 0px 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.logo{
+.logo {
     cursor: pointer;
+    width: 300px;
+    line-height: 0.5;
 }
 
-.search{
-    width: 361px;
+.search,
+.search-result {
+    width: 500px;
+}
+
+.search {
     height: 46px;
     display: flex;
     position: relative;
@@ -29,7 +36,7 @@
     background-color: #1618230f;
     overflow: hidden;
 
-    input{
+    input {
         height: 100%;
         flex: 1;
         font-size: 1.6rem;
@@ -37,23 +44,23 @@
         caret-color: var(--primary);
     }
 
-    input:not(:placeholder-shown) ~.search-btn{
+    input:not(:placeholder-shown) ~ .search-btn {
         color: #161823;
     }
 
     &:hover {
         border-color: #ccc;
-        .search-btn{
+        .search-btn {
             background-color: rgba(22, 24, 35, 0.06);
             color: #161823;
             cursor: pointer;
         }
     }
-    &:focus-within{
+    &:focus-within {
         border-color: #ccc;
     }
 
-    &::after{
+    &::after {
         content: '';
         position: absolute;
         right: 52px;
@@ -64,18 +71,22 @@
     }
 }
 
-.loading,
-.close-btn{
-   position: absolute;
-   right: 52px;
-   margin-right: 16px;
-   top: 50%;
-   transform: translateY(-50%);
-   color: #a7a7ab;
-   display: none;
+.search-title {
+    padding: 5px 12px;
 }
 
-.search-btn{
+.loading,
+.close-btn {
+    position: absolute;
+    right: 52px;
+    margin-right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a7a7ab;
+    display: none;
+}
+
+.search-btn {
     width: 52px;
     height: 100%;
     color: #a7a7ab;
@@ -83,6 +94,23 @@
     font-weight: 1000;
 }
 
+.device-img {
+    margin-left: 24px;
+    cursor: pointer;
+}
 
+.action {
+    width: 335px;
+    display: flex;
+}
 
+.more {
+    font-size: 2rem;
+    margin-left: 36px;
+    background-color: transparent;
+    padding: 8px;
+}
 
+.menu {
+    width: 224px;
+}
