@@ -1,11 +1,35 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,600;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
     --primary: #fe2c55;
     --default-layout-header-height: 60px;
     --default-layout-weight: 1150px;
     --text-color: #333;
+}
+
+//fonts embbeded
+
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Regular.woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Semibold.woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokFont-Bold.woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: TikTokFont;
+    src: url('/assets/fonts/TikTokDisplayFont-Bold.woff2');
 }
 
 html {
@@ -19,7 +43,7 @@ html {
 }
 
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'TikTokFont', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -35,4 +59,27 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+body {
+    .tippy-box {
+        background-color: #545454eb;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.5rem;
+        line-height: 2.1rem;
+        position: relative;
+    }
+    .tippy-arrow {
+        position: absolute;
+        color: #545454eb;
+        top: -1px;
+    }
+    .tippy-box[data-placement^='bottom'] > .tippy-arrow {
+        top: -1px;
+    }
+
+    .tippy-content {
+        padding: 8px 9px;
+    }
 }
