@@ -1,20 +1,10 @@
-import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
-    faPlus,
-    faEllipsisVertical,
-} from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 import { faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
 import classNames from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
 import Tippy from '@tippyjs/react';
-import TippyHeadless from '@tippyjs/react/headless';
 import styles from './Header.module.scss';
-import { Wrapper as PopperWrapper } from '~/components/Popper';
-import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import images from '~/assets/icons/images';
@@ -29,6 +19,7 @@ import keyboards from '~/assets/icons/keyboards';
 import logOut from '~/assets/icons/logOut';
 import setting from '~/assets/icons/setting';
 import Image from '~/components/Image';
+import Search from '../Search';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -61,15 +52,44 @@ const MENU_ITEMS = [
         title: 'Keyboard shortcuts',
     },
 ];
+
+const currentUser = true;
+
+const userMenu = [
+    {
+        icon: <FontAwesomeIcon className={cx('menu-icon')} icon={faUser} />,
+        title: 'View Profile',
+        to: '/profile',
+    },
+    {
+        icon: <img src={favorite.logo} className={cx('menu-icon')} alt="favorite"></img>,
+        title: 'Favorite',
+        to: '/feedback',
+    },
+    {
+        icon: <img src={getCoin.logo} className={cx('menu-icon')} alt="getCoin"></img>,
+        title: 'Get Coins',
+        to: '/feedback',
+    },
+    {
+        icon: <img src={creator.logo} className={cx('menu-icon')} alt="creator"></img>,
+        title: 'LIVE Creator Hub',
+        to: '/feedback',
+    },
+    {
+        icon: <img src={setting.logo} className={cx('menu-icon')} alt="setting"></img>,
+        title: 'Setting',
+        to: '/following',
+    },
+    ...MENU_ITEMS,
+    {
+        icon: <img src={logOut.logo} className={cx('menu-icon')} alt="logOut"></img>,
+        title: 'Log Out',
+        to: '/feedback',
+        separate: true,
+    },
+];
 function Header() {
-    const [searchResult, setSearchResult] = useState([]);
-
-    useEffect(() => {
-        setTimeout(() => {
-            // setSearchResult([1, 2, 3]);
-        }, 5);
-    }, []);
-
     const handleClick = (item) => {
         switch (item.type) {
             case 'language':
@@ -79,43 +99,6 @@ function Header() {
         }
     };
 
-    const currentUser = true;
-
-    const userMenu = [
-        {
-            icon: <FontAwesomeIcon className={cx('menu-icon')} icon={faUser} />,
-            title: 'View Profile',
-            to: '/profile',
-        },
-        {
-            icon: <img src={favorite.logo} className={cx('menu-icon')} alt="favorite"></img>,
-            title: 'Favorite',
-            to: '/feedback',
-        },
-        {
-            icon: <img src={getCoin.logo} className={cx('menu-icon')} alt="getCoin"></img>,
-            title: 'Get Coins',
-            to: '/feedback',
-        },
-        {
-            icon: <img src={creator.logo} className={cx('menu-icon')} alt="creator"></img>,
-            title: 'LIVE Creator Hub',
-            to: '/feedback',
-        },
-        {
-            icon: <img src={setting.logo} className={cx('menu-icon')} alt="setting"></img>,
-            title: 'Setting',
-            to: '/feedback',
-        },
-        ...MENU_ITEMS,
-        {
-            icon: <img src={logOut.logo} className={cx('menu-icon')} alt="logOut"></img>,
-            title: 'Log Out',
-            to: '/feedback',
-            separate: true,
-        },
-    ];
-
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -123,32 +106,7 @@ function Header() {
                     <img src={images.logo} alt="tiktok"></img>
                 </div>
 
-                <TippyHeadless
-                    placement="bottom-end"
-                    interactive
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Accounts</h4>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input placeholder="Search accounts and videos" spellCheck="false" />
-                        <button className={cx('close-btn')}>
-                            <FontAwesomeIcon icon={faCircleXmark} />
-                        </button>
-                        <FontAwesomeIcon icon={faSpinner} className={cx('loading')} />
-                        <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
-                        </button>
-                    </div>
-                </TippyHeadless>
+                <Search />
 
                 <div className={cx('action')}>
                     {currentUser ? (

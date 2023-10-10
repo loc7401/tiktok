@@ -13,6 +13,8 @@ function Menu({ children, items = [], onChange }) {
     const renderItem = () => {
         return current.data.map((item, index) => {
             const isHasChildren = !!item.children;
+            const isHaslogout = !!item.logout;
+
             return (
                 <MenuItem
                     key={index}
@@ -20,6 +22,8 @@ function Menu({ children, items = [], onChange }) {
                     onClick={() => {
                         if (isHasChildren) {
                             setHistory((prev) => [...prev, item.children]);
+                        } else if (isHaslogout) {
+                            item.logout();
                         } else {
                             onChange(item);
                         }
@@ -32,6 +36,7 @@ function Menu({ children, items = [], onChange }) {
         <Tippy
             placement="bottom-end"
             interactive
+            trigger="click"
             delay={[0, 500]}
             onHide={() => setHistory((history) => history.slice(0, 1))}
             render={(attrs) => (

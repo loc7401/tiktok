@@ -1,15 +1,15 @@
-.wrapper{
+.wrapper {
     display: flex;
     align-items: center;
     padding: 8px 16px;
-    
-    &:hover{
+
+    &:hover {
         background-color: #16182308;
         cursor: pointer;
     }
 }
 
-.avatar{
+.avatar {
     width: 40px;
     height: 40px;
     margin-right: 12px;
@@ -17,27 +17,25 @@
     object-fit: cover;
 }
 
-.infor{
+.infor {
     flex: 1;
     position: relative;
 }
 
-.name{
+.name {
     position: absolute;
     top: -21px;
     font-weight: 600;
 }
 
-.icon{
+.icon {
     margin-left: 6px;
     color: #20d5ec;
 }
 
-.username{
-   position: absolute;
+.username {
+    position: absolute;
     top: -2px;
     color: #16182380;
-    font-weight: 500;
+    font-weight: 300;
 }
-
-
