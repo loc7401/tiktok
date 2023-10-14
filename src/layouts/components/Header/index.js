@@ -102,9 +102,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <a href="https://www.tiktok.com/" className={cx('logo')}>
                     <img src={images.logo} alt="tiktok"></img>
-                </div>
+                </a>
 
                 <Search />
 

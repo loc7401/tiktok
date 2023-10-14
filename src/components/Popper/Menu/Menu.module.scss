@@ -2,7 +2,7 @@
     width: 224px;
     .menu-item {
         margin-left: 0px;
-        padding-left: 14px;
+        padding-left: 18px;
     }
 }
 
@@ -20,6 +20,12 @@
         border-top: 1px solid rgba(22, 24, 35, 0.12);
     }
 }
+
+.menu-body {
+    overflow-y: auto;
+    max-height: 500px;
+}
+
 .header {
     position: relative;
     height: 50px;

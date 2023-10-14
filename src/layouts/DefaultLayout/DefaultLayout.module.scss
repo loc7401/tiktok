@@ -5,7 +5,12 @@
 }
 
 .container {
+    margin-top: 60px;
     display: flex;
     width: 100%;
     min-height: 1000px;
+}
+
+.content {
+    width: calc(100% - 224px);
 }
