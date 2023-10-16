@@ -17,6 +17,7 @@
         height: 100%;
         flex: 1;
         font-size: 1.6rem;
+        padding-right: 40px;
         background-color: transparent;
         caret-color: var(--primary);
     }
@@ -43,7 +44,7 @@
         right: 52px;
         top: 9px;
         height: 28px;
-        width: 1px;
+        width: 0.5px;
         background-color: #d7d7d9;
     }
 }
