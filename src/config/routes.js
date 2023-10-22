@@ -3,7 +3,9 @@ const configRoute = {
     following: '/following',
     profile: '/@:nickname',
     upload: '/upload',
-    Search: '/Search',
+    search: '/search',
+    explore: '/explore',
+    live: '/live',
 };
 
 export default configRoute;

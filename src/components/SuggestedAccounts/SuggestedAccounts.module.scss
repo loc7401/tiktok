@@ -1,0 +1,63 @@
+.wrapper {
+    padding: 16px 0;
+    border-bottom: 1px solid #f1f1f2;
+}
+
+.label {
+    font-size: 1.4rem;
+    color: #161823bf;
+    font-weight: 600;
+    padding: 0 0 8px 8px;
+}
+
+.account-avatar {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.account-item {
+    display: flex;
+    padding: 0 0 8px 8px;
+    align-items: center;
+    border-radius: 4px;
+    transition: background-color ease-in-out 200ms;
+
+    &:hover {
+        background-color: #16182308;
+        cursor: pointer;
+    }
+}
+
+.account-infor {
+}
+
+.account-name {
+    height: 15px;
+}
+
+.account-nickName {
+    font-size: 1.6rem;
+    margin-right: 4px;
+}
+
+.account-fullName {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: TikTokFont, Arial, Tahoma, PingFangSC, sans-serif;
+    color: #161823bf;
+}
+
+.see-more {
+    color: var(--primary);
+    margin-left: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.check-icon {
+    color: #20d5ec;
+}

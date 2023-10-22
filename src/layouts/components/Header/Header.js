@@ -1,30 +1,32 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
-import { faMessage, faUser } from '@fortawesome/free-regular-svg-icons';
 import classNames from 'classnames/bind';
 import 'tippy.js/dist/tippy.css';
 import Tippy from '@tippyjs/react';
 import styles from './Header.module.scss';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
-import images from '~/assets/icons/images';
-import device from '~/assets/icons/device';
-import message from '~/assets/icons/message';
-import favorite from '~/assets/icons/favorite';
-import getCoin from '~/assets/icons/getCoin';
-import creator from '~/assets/icons/creator';
-import english from '~/assets/icons/english';
-import feedback from '~/assets/icons/feedback';
-import keyboards from '~/assets/icons/keyboards';
-import logOut from '~/assets/icons/logOut';
-import setting from '~/assets/icons/setting';
+import images from '~/assets/images';
 import Image from '~/components/Image';
 import Search from '../Search';
-
+import {
+    UserIcon,
+    CreatorIcon,
+    DeviceIcon,
+    EnglishIcon,
+    FavoriteIcon,
+    FeedbackIcon,
+    GetcoinIcon,
+    KeyBoardIcon,
+    LogoutIcon,
+    MessageIcon,
+    SettingIcon,
+    InboxIcon,
+} from '../Icons';
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
     {
-        icon: <img src={english.logo} className={cx('menu-icon')} alt="english"></img>,
+        icon: <EnglishIcon />,
         title: 'English',
         children: {
             title: 'Language',
@@ -43,47 +45,47 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: <img src={feedback.logo} className={cx('menu-icon')} alt="feedback"></img>,
+        icon: <FeedbackIcon />,
         title: 'Feedback and help',
         to: '/feedback',
     },
     {
-        icon: <img src={keyboards.logo} className={cx('menu-icon')} alt="keyboards"></img>,
+        icon: <KeyBoardIcon />,
         title: 'Keyboard shortcuts',
     },
 ];
 
-const currentUser = false;
+const currentUser = true;
 
 const userMenu = [
     {
-        icon: <FontAwesomeIcon className={cx('menu-icon')} icon={faUser} />,
+        icon: <UserIcon />,
         title: 'View Profile',
         to: '/profile',
     },
     {
-        icon: <img src={favorite.logo} className={cx('menu-icon')} alt="favorite"></img>,
+        icon: <FavoriteIcon />,
         title: 'Favorite',
         to: '/feedback',
     },
     {
-        icon: <img src={getCoin.logo} className={cx('menu-icon')} alt="getCoin"></img>,
+        icon: <GetcoinIcon />,
         title: 'Get Coins',
         to: '/feedback',
     },
     {
-        icon: <img src={creator.logo} className={cx('menu-icon')} alt="creator"></img>,
+        icon: <CreatorIcon />,
         title: 'LIVE Creator Hub',
         to: '/feedback',
     },
     {
-        icon: <img src={setting.logo} className={cx('menu-icon')} alt="setting"></img>,
+        icon: <SettingIcon />,
         title: 'Setting',
         to: '/following',
     },
     ...MENU_ITEMS,
     {
-        icon: <img src={logOut.logo} className={cx('menu-icon')} alt="logOut"></img>,
+        icon: <LogoutIcon />,
         title: 'Log Out',
         to: '/feedback',
         separate: true,
@@ -115,16 +117,20 @@ function Header() {
                                 <span> Upload</span>
                             </Button>
                             <button className={cx('action-btn')}>
-                                <img src={device.logo} className={cx('device-img')} alt="device"></img>
+                                <DeviceIcon width="2.6rem" height="2.6rem" className={cx('device-img')} />
                             </button>
                             <Tippy content="Message" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <img src={message.logo} className={cx('message-img')} alt="message"></img>
+                                    <MessageIcon
+                                        width="2.6rem"
+                                        height="2.6rem"
+                                        className={cx('message-img')}
+                                    />
                                 </button>
                             </Tippy>
                             <Tippy content="Inbox" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faMessage} />
+                                    <InboxIcon width="3.4rem" height="3.4rem" />
                                 </button>
                             </Tippy>
                         </>
@@ -134,7 +140,7 @@ function Header() {
                                 <span> Upload</span>
                             </Button>
                             <Button primary>Log in</Button>
-                            <img src={device.logo} className={cx('device-img')} alt="device"></img>
+                            <DeviceIcon width="2.6rem" height="2.6rem" className={cx('device-icon')} />
                         </>
                     )}
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleClick}>
