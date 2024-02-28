@@ -1,0 +1,73 @@
+.wrapper {
+    font-size: 1.6rem;
+    height: 36px;
+    min-width: 100px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-family: 'TikTokFont', sans-serif;
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid transparent;
+    user-select: none;
+
+    + .wrapper {
+        margin-left: 16px;
+    }
+}
+
+.icon + .title,
+.title + .icon {
+    margin-left: 8px;
+}
+
+.icon {
+    display: inline-block;
+    width: 22px;
+    line-height: 100%;
+}
+
+.primary {
+    background-color: var(--primary);
+    color: rgba(255, 255, 255, 1);
+    &:hover {
+        background-color: #ef2a50;
+    }
+}
+
+.outline {
+    color: var(--primary);
+    width: 115px;
+    border-color: currentColor;
+    font-weight: 400;
+    &:hover {
+        background-color: #fe2c5514;
+    }
+}
+
+.text {
+    color: var(--text-color);
+    font-weight: 500;
+    border: 1px solid #ccc;
+    &:hover {
+        background-color: #16182308;
+    }
+}
+
+.disable {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.name {
+    margin-left: 8px;
+}
+
+.small {
+    min-width: 88px;
+    padding: 4px 16px;
+}
+
+.large {
+    min-width: 148px;
+    padding: 14px -1px;
+}

@@ -1,0 +1,51 @@
+.wrapper {
+    padding: 16px 0 0 8px;
+}
+
+.effect-link {
+    position: relative;
+    overflow: auto;
+}
+
+.effect-image {
+    height: 52px;
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 22px;
+}
+
+.effect-content {
+    display: flex;
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+}
+
+.effect-logo {
+    width: 20px;
+    height: 20px;
+}
+
+.effect-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    margin-left: 6px;
+}
+
+.footer-wrapper {
+    color: #16182380;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    line-height: 2;
+
+    & a {
+        margin: 5px 6px 0 0;
+        color: #16182380;
+        font-weight: 600;
+    }
+
+    & a:hover {
+        text-decoration: revert;
+    }
+}

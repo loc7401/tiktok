@@ -1,0 +1,29 @@
+.nav {
+    border-bottom: 1px solid #f1f1f2;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color ease-in-out 200ms;
+
+    &.active {
+        color: var(--primary);
+    }
+
+    &:hover {
+        background-color: #16182308;
+        cursor: pointer;
+    }
+    &:last-child {
+        margin-bottom: 8px;
+    }
+}
+
+.title {
+    margin-left: 8px;
+}
