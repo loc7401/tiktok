@@ -85,7 +85,7 @@ function Footer() {
             </div>
 
             <div className={cx('footer-wrapper')}>
-                <span>© 2023 TikTok</span>
+                <span>© 2023 TikTokk</span>
             </div>
         </div>
     );
